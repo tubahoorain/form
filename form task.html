@@ -189,7 +189,7 @@
     <script>
         // var headerTitle = document.getElementById('heading');
         // headerTitle.textContent = 'Registration form';
-        // headerTitle.innerText = 'wb design';
+        // headerTitle.innerText = '<u>wb design<u>';
         // headerTitle.innerHTML = '<i>Registration form</i>';
         // headerTitle.style.borderBottom = '10px solid black';
 
@@ -204,10 +204,35 @@
 //         label[0].textContent = 'Name';
 //         label[4].style.backgroundColor = 'yellow';
 
-// for(var a = 0; a <label.length; a++){
+// for(var a = 0; a < label.length; a++){
 //   label[a].style.backgroundColor ='yellow';
 // }
- 
+// var formControl = document.getElementsByClassName('form_control');
+// formControl[4].style.color = 'blue';
+// formControl[2].style.color = 'blue';
+// console.log(formControl);
+
+// USING QUERY SELECTOR : querySelector and querySelectorAll are methods used to select HTML elements from the DOM (Document Object Model)
+
+// var formControl = document.querySelector('.form_control');
+// formControl[3].style.color = 'blue';
+// console.log(formControl);
+
+// var formControl = document.querySelectorAll('.form_control');
+// formControl[3].style.color = 'blue';
+// console.log(formControl);
+
+// var formControl = document.querySelectorAll('.form_control:last-child');
+// formControl.style.backgroundColor = 'gray';
+// console.log(formControl);
+
+//  var button = document.querySelector('button[type="submit"]');
+//  button.style.backgroundColor = 'yellow';
+//  button.style.color = 'black';
+
+var input = document.querySelector('input');
+      input.value = 'Enter Your Name'
+       
 
     </script>
   </body>
