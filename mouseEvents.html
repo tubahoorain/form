@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mouse Events Example</title>
+</head>
+<body>
+
+  <!-- Click -->
+  <button onclick="alert('Single Click Triggered')">Click Me</button><br><br>
+
+  <!-- Double Click -->
+  <button ondblclick="alert('Double Click Triggered')">Double Click Me</button><br><br>
+
+  <!-- Right Click -->
+  <p oncontextmenu="alert('Right Click Triggered')">Right Click on this text</p><br>
+
+  <!-- Mouse Enter -->
+  <div onmouseenter="alert('Mouse Enter Triggered')" style="width:150px; height:50px; background:#d0f0ff; padding:10px;">
+    Hover (Mouse Enter)
+  </div><br>
+
+  <!-- Mouse Leave -->
+  <div onmouseleave="alert('Mouse Leave Triggered')" style="width:150px; height:50px; background:#ffd0d0; padding:10px;">
+    Move Mouse Out
+  </div><br>
+
+  <!-- Mouse Move -->
+  <div onmousemove="document.getElementById('moveText').innerText = 'Mouse Moving...'" style="width:150px; height:50px; background:#d0ffd0; padding:10px;">
+    Move Mouse Here
+  </div>
+  <p id="moveText"></p><br>
+
+  <!-- Mouse Down -->
+  <button onmousedown="alert('Mouse Down Triggered')">Press Mouse Button Down</button><br><br>
+
+  <!-- Mouse Up -->
+  <button onmouseup="alert('Mouse Up Triggered')">Release Mouse Button</button><br><br>
+
+</body>
+</html>
