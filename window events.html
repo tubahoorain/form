@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Window Events Demo</title>
+</head>
+<body>
+
+  <h1>Window Events with document.write()</h1>
+  <p>Try resizing, scrolling, or reloading the page.</p>
+
+  <script>
+    // Page fully loaded
+    // window.onload = function () {
+    //   document.write("<p>✅ Page loaded!</p>");
+    // };
+
+    // Window resized
+    window.onresize = function () {
+      document.write("<p>📏 Window resized!</p>");
+    };
+
+    // Page scrolled
+    window.onscroll = function () {
+      document.write("<p>📜 Page scrolled!</p>");
+    };
+
+   
+    // Error example (uncomment to test)
+    /*
+    window.onerror = function (msg, url, line) {
+      document.write("<p>❌ Error occurred: " + msg + "</p>");
+    };
+    */
+  </script>
+
+  <!-- Add height for scrolling -->
+  <div style="height:1500px;"></div>
+
+</body>
+</html>
