@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>FadeIn, FadeOut, FadeToggle</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    body {
+      font-family: Arial;
+      text-align: center;
+      padding: 50px;
+    }
+
+    #myImage {
+      width: 300px;
+      display: none; /* initially hidden */
+    }
+
+    button {
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>jQuery Fade Effects Example</h2>
+
+  <img id="myImage" src="tuba  (1).jpg" alt="Placeholder Image">
+
+  <br><br>
+
+  <button id="fadeInBtn">Fade In</button>
+  <button id="fadeOutBtn">Fade Out</button>
+  <button id="fadeToggleBtn">Fade Toggle</button>
+
+  <script>
+    $(document).ready(function() {
+      $("#fadeInBtn").click(function() {
+        $("#myImage").fadeIn(3000);
+      });
+
+    //   $("#fadeOutBtn").click(function() {
+    //     $("#myImage").fadeOut(2000);
+    //     alert("Now it is hidden");
+    //   });
+
+    $("#fadeOutBtn").click(function() {
+        $("#myImage").fadeOut(2000, function() {
+          alert("Now it is hidden");
+        });
+      });
+
+      $("#fadeToggleBtn").click(function() {
+        $("#myImage").fadeToggle();
+      });
+    });
+  </script>
+
+</body>
+</html>
