@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Slide Effects Project</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      background-color: #f4f4f4;
+      padding: 40px;
+    }
+
+    h2 {
+      color: #333;
+    }
+
+    #panel {
+      width: 60%;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #2196F3;
+      color: white;
+      font-size: 18px;
+      border-radius: 10px;
+      display: none;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    button {
+      margin: 10px;
+      padding: 12px 20px;
+      font-size: 16px;
+      background-color: #333;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background-color: #555;
+    }
+
+    #toggleIcon {
+      font-size: 20px;
+      margin-left: 10px;
+    }
+
+    #status {
+      margin-top: 10px;
+      font-weight: bold;
+      color: green;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Sliding Info Panel with jQuery</h2>
+
+  <div id="panel">
+    👋 Welcome to the sliding panel! Here you can put your message, image, or content. Try using the buttons below to control this box.
+  </div>
+
+  <button id="slideDownBtn">Slide Down</button>
+  <button id="slideUpBtn">Slide Up</button>
+  <button id="slideToggleBtn">
+    Slide Toggle <span id="toggleIcon">⬇️</span>
+  </button>
+  <button id="resetBtn">Reset Panel</button>
+
+  <div id="status"></div>
+
+  <script>
+    $(document).ready(function() {
+
+      $("#slideDownBtn").click(function() {
+        $("#panel").slideDown(1000);
+        $("#status").text("Panel is shown.");
+        $("#toggleIcon").text("⬆️");
+      });
+
+      $("#slideUpBtn").click(function() {
+        $("#panel").slideUp(1000, function() {
+          alert("Panel is now hidden.");
+          $("#status").text("Panel is hidden.");
+          $("#toggleIcon").text("⬇️");
+        });
+      });
+
+      $("#slideToggleBtn").click(function() {
+        $("#panel").slideToggle(800, function() {
+          const isVisible = $("#panel").is(":visible");
+          $("#toggleIcon").text(isVisible ? "⬆️" : "⬇️");
+          $("#status").text(isVisible ? "Panel is visible." : "Panel is hidden.");
+        });
+      });
+
+      $("#resetBtn").click(function() {
+        $("#panel").slideUp(600);
+        $("#status").text("Panel reset to hidden.");
+        $("#toggleIcon").text("⬇️");
+      });
+
+    });
+  </script>
+
+</body>
+</html>
